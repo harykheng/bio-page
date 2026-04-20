@@ -1,240 +1,938 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UNCULTURE Indonesia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@300;400;500&family=Space+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="assets/favicon.png" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page">
-      <div class="header">
-        <div class="header-top">
-          <span class="brand">
-            <img src="assets/font-white.png" style="width: 150px" />
-          </span>
-          <div class="live-badge">
-            <span class="live-dot"></span>
-            V3 Boxy Polo Live
-          </div>
-        </div>
-        <div class="header-sub">Fashion is freedom—</div>
-        <div class="header-sub">don't let it cage you.</div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNCULTURE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@300;400&family=Space+Mono&display=swap" rel="stylesheet">
 
-      <div class="section">
-        <div class="section-label">Produk — V3 Boxy Oversized Polo</div>
-        <div class="product-grid">
-          <div class="product-photo" data-label="FOTO&#10;PRODUK&#10;01">
-            <img src="assets/foto-model.jpg" />
-          </div>
-          <div class="product-photo" data-label="FOTO&#10;PRODUK&#10;02">
-            <img src="assets/v3-detail2.jpg" />
-          </div>
-          <div class="product-photo" data-label="FOTO&#10;PRODUK&#10;03">
-            <img src="assets/v3-detail1.jpg" />
-          </div>
-        </div>
-        <div class="product-caption">
-          <span class="product-name">Boxy Oversized Polo</span>
-          <div class="product-price">
-            <span class="price-original">Rp 425.000</span>
-            <span class="price-promo">Rp 329.000</span>
-            <span class="price-tag">PROMO</span>
-          </div>
-        </div>
-      </div>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPMMGQXBT9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MPMMGQXBT9');
+  </script>
+  <style>
+    :root {
+      --black: #080808;
+      --white: #f2f0ec;
+      --grey: #888;
+      --dim: #181818;
+      --border: rgba(242,240,236,0.08);
+    }
 
-      <!-- V2 GRID -->
-      <div class="section">
-        <div class="section-label">Koleksi — V2</div>
-        <div class="product-grid">
-          <div class="product-photo" data-label="FOTO&#10;V2&#10;01">
-            <img src="assets/v2-black.jpg" />
-          </div>
-          <div class="product-photo" data-label="FOTO&#10;V2&#10;02">
-            <img src="assets/v2-creme.jpg" />
-          </div>
-          <div class="product-photo" data-label="FOTO&#10;V2&#10;03">
-            <img src="assets/v2-detail.jpg" />
-          </div>
-        </div>
-        <div class="product-caption">
-          <span class="product-name">V2 — Basic Logo Oversized Tshirt</span>
-          <div class="product-price">
-            <span class="price-promo">Rp 179.000</span>
-          </div>
-        </div>
-      </div>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      <div class="rule"></div>
+    html { scroll-behavior: smooth; }
 
-      <!-- V1 GRID -->
-      <div class="section">
-        <div class="section-label">Koleksi — V1</div>
-        <div class="product-grid">
-          <div class="product-photo" data-label="FOTO&#10;V1&#10;01">
-            <img src="assets/v1-cowo.jpg" />
-          </div>
-          <div class="product-photo" data-label="FOTO&#10;V1&#10;02">
-            <img src="assets/v1-cewe.jpg" />
-          </div>
-          <div class="product-photo" data-label="FOTO&#10;V1&#10;03">
-            <img src="assets/v1-detail.jpg" />
-          </div>
-        </div>
-        <div class="product-caption">
-          <span class="product-name">V1 — Black on Black Oversized Tshirt</span>
-          <div class="product-price">
-            <span class="price-promo">Rp 245.000</span>
-          </div>
-        </div>
-      </div>
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-      <div class="rule"></div>
+    /* NOISE */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 200;
+    }
 
-      <div class="testimonials">
-        <div class="section-label">Yang bilang</div>
-        <div class="testi-list">
-          <div class="testi-item">
-            <div class="testi-top">
-              <span class="testi-name">Rizky A.</span>
-              <span class="testi-stars">★★★★★</span>
-            </div>
-            <p class="testi-text">
-              "Bahan tebal, fit oversized-nya pas banget. Udah order 2x."
-            </p>
-          </div>
+    .page {
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 0 0 80px;
+    }
 
-          <div class="testi-item">
-            <div class="testi-top">
-              <span class="testi-name">Dimas F.</span>
-              <span class="testi-stars">★★★★★</span>
-            </div>
-            <p class="testi-text">
-              "Keliatan mahal padahal harganya worth it. Daily go-to sekarang."
-            </p>
-          </div>
+    /* ── HEADER ── */
+    .header {
+      padding: 36px 24px 28px;
+      border-bottom: 1px solid var(--border);
+      animation: up 0.4s ease both;
+    }
 
-          <div class="testi-item">
-            <div class="testi-top">
-              <span class="testi-name">Fajar R.</span>
-              <span class="testi-stars">★★★★★</span>
-            </div>
-            <p class="testi-text">
-              "Zipper collar-nya detail banget, nggak pasaran. Suka banget sama
-              vibe-nya."
-            </p>
-          </div>
-        </div>
-      </div>
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
 
-      <div class="rule"></div>
+    .brand {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
 
-      <div class="cta-intro">
-        <div class="cta-headline">Dapatkan<br />Sekarang</div>
-        <div class="cta-sub">Pilih platform yang paling nyaman buat lo</div>
-      </div>
+    .live-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      color: var(--grey);
+      text-transform: uppercase;
+    }
 
-      <div class="links">
-        <a
-          href="https://www.unculture.id"
-          class="link-btn primary"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="btn-left">
-            <div class="btn-icon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
-                />
-              </svg>
-            </div>
-            <div class="btn-text">
-              <span class="btn-label">Website</span>
-              <span class="btn-desc">unculture.id — checkout langsung</span>
-            </div>
-          </div>
-          <span class="btn-arrow">→</span>
-        </a>
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--white);
+      animation: blink 2s ease-in-out infinite;
+    }
 
-        <a
-          href="https://s.shopee.co.id/50UbuSHIJE"
-          class="link-btn"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="btn-left">
-            <div class="btn-icon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M19 7h-1.5C17.5 4.24 15.26 2 12 2S6.5 4.24 6.5 7H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-7-3c2.21 0 3.5 1.34 3.5 3h-7c0-1.66 1.29-3 3.5-3zm7 16H5V9h14v11zm-7-6c-1.1 0-2-.9-2-2h-2c0 2.21 1.79 4 4 4s4-1.79 4-4h-2c0 1.1-.9 2-2 2z"
-                />
-              </svg>
-            </div>
-            <div class="btn-text">
-              <span class="btn-label">Shopee</span>
-              <span class="btn-desc">Belanja via marketplace</span>
-            </div>
-          </div>
-          <span class="btn-arrow">→</span>
-        </a>
+    .header-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--grey);
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 12px;
+    }
 
-        <a
-          href="https://vt.tiktok.com/ZS9R3jSeWnnda-J2qaS/"
-          class="link-btn"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="btn-left">
-            <div class="btn-icon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"
-                />
-              </svg>
-            </div>
-            <div class="btn-text">
-              <span class="btn-label">TikTok Shop</span>
-              <span class="btn-desc">Beli langsung dari video</span>
-            </div>
-          </div>
-          <span class="btn-arrow">→</span>
-        </a>
+    .social-proof {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      text-transform: uppercase;
+      border: 1px solid rgba(242,240,236,0.15);
+      padding: 5px 10px;
+    }
 
-        <a
-          href="https://instagram.com/unculture.id"
-          class="link-btn"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="btn-left">
-            <div class="btn-icon">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
-                />
-              </svg>
-            </div>
-            <div class="btn-text">
-              <span class="btn-label">Instagram</span>
-              <span class="btn-desc">@unculture.id</span>
-            </div>
-          </div>
-          <span class="btn-arrow">→</span>
-        </a>
-      </div>
+    .social-proof::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--white);
+      opacity: 0.55;
+      flex-shrink: 0;
+    }
 
-      <div class="footer">
-        <p class="footer-text">© 2025 Unculture — Jakarta</p>
+    /* ── SHARED ── */
+    .rule { height: 1px; background: var(--border); margin: 28px 24px 0; }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      color: var(--grey);
+      text-transform: uppercase;
+      opacity: 0.4;
+      margin-bottom: 14px;
+    }
+
+    /* ── CTA LINKS (reusable) ── */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 18px;
+      text-decoration: none;
+      color: var(--white);
+      border: 1px solid var(--border);
+      background: transparent;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .link-btn.primary {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    .link-btn.primary:hover { background: #d8d5d0; }
+    .link-btn:not(.primary):hover {
+      background: rgba(242,240,236,0.05);
+      border-color: rgba(242,240,236,0.2);
+    }
+
+    .btn-left { display: flex; align-items: center; gap: 12px; }
+
+    .btn-icon {
+      width: 30px; height: 30px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .btn-icon svg { width: 17px; height: 17px; }
+    .link-btn.primary .btn-icon svg { fill: var(--black); }
+    .link-btn:not(.primary) .btn-icon svg { fill: var(--grey); transition: fill 0.15s; }
+    .link-btn:not(.primary):hover .btn-icon svg { fill: var(--white); }
+
+    .btn-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+    }
+
+    .btn-desc {
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 1px;
+      opacity: 0.38;
+      margin-top: 3px;
+      display: block;
+      text-transform: uppercase;
+    }
+
+    .btn-arrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      opacity: 0.3;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+
+    .link-btn:hover .btn-arrow { opacity: 0.9; transform: translateX(3px); }
+
+    /* ── CTA TOP ── */
+    .cta-top {
+      padding: 28px 24px 0;
+      animation: up 0.4s 0.05s ease both;
+    }
+
+    .cta-headline-top {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 30px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .cta-sub-top {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+    }
+
+    .cta-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 16px 8px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--white);
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .cta-cell.primary {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    .cta-cell.primary:hover { background: #d8d5d0; }
+    .cta-cell:not(.primary):hover {
+      background: rgba(242,240,236,0.05);
+      border-color: rgba(242,240,236,0.2);
+    }
+
+    .cta-cell-icon {
+      width: 22px; height: 22px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .cta-cell-icon svg { width: 18px; height: 18px; }
+    .cta-cell.primary .cta-cell-icon svg { fill: var(--black); }
+    .cta-cell:not(.primary) .cta-cell-icon svg { fill: var(--grey); transition: fill 0.15s; }
+    .cta-cell:not(.primary):hover .cta-cell-icon svg { fill: var(--white); }
+
+    .cta-cell-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ── PRODUCT GRID ── */
+    .section { padding: 28px 24px 0; animation: up 0.4s 0.1s ease both; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+    }
+
+    .product-photo {
+      aspect-ratio: 3/4;
+      background: var(--dim);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .product-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .product-photo:hover img { transform: scale(1.05); }
+
+    .product-photo.placeholder {
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .product-photo.placeholder::before {
+      content: attr(data-label);
+      font-family: 'Space Mono', monospace;
+      font-size: 7px;
+      letter-spacing: 1px;
+      color: rgba(242,240,236,0.12);
+      text-align: center;
+      padding: 6px;
+      line-height: 1.8;
+    }
+
+    .product-caption {
+      margin-top: 10px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .product-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .product-price { display: flex; align-items: center; gap: 7px; }
+
+    .price-original {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--grey);
+      opacity: 0.4;
+      text-decoration: line-through;
+    }
+
+    .price-promo {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--white);
+    }
+
+    .price-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 1px;
+      background: var(--white);
+      color: var(--black);
+      padding: 2px 6px;
+      text-transform: uppercase;
+    }
+
+    /* ── COLLECTION BUTTONS ── */
+    .col-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+      margin-top: 3px;
+    }
+
+    .col-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 9px 6px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--grey);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .col-btn svg { width: 11px; height: 11px; fill: var(--grey); transition: fill 0.15s; flex-shrink: 0; }
+
+    .col-btn:hover {
+      background: rgba(242,240,236,0.06);
+      border-color: rgba(242,240,236,0.2);
+      color: var(--white);
+    }
+
+    .col-btn:hover svg { fill: var(--white); }
+    .benefits { padding: 28px 24px 0; animation: up 0.4s 0.15s ease both; }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .benefit-card {
+      background: var(--dim);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .benefit-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: #222;
+    }
+
+    .benefit-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .benefit-card:hover .benefit-img img { transform: scale(1.05); }
+
+    .benefit-img.placeholder {
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .benefit-img.placeholder::before {
+      content: attr(data-label);
+      font-family: 'Space Mono', monospace;
+      font-size: 7px;
+      color: rgba(242,240,236,0.12);
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .benefit-body { padding: 10px 12px 14px; }
+
+    .benefit-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--white);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .benefit-desc {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.55;
+      color: var(--grey);
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 28px 24px 0; animation: up 0.4s 0.2s ease both; }
+
+    .testi-item {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .testi-item:first-child { border-top: 1px solid var(--border); }
+
+    .testi-top {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      margin-bottom: 7px;
+    }
+
+    .testi-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .testi-stars { font-size: 10px; letter-spacing: 2px; opacity: 0.55; }
+
+    .testi-text {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--grey);
+    }
+
+    /* ── CTA BOTTOM ── */
+    .cta-bottom { padding: 32px 24px 0; animation: up 0.4s 0.25s ease both; }
+
+    .cta-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 34px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .cta-sub {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 18px;
+    }
+
+    /* ── FOOTER ── */
+    .footer { padding: 40px 24px 0; text-align: center; }
+
+    .footer-text {
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--grey);
+      opacity: 0.2;
+      text-transform: uppercase;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lb {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lb.open { display: flex; }
+
+    .lb-img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lb-placeholder {
+      width: min(360px, 90vw);
+      aspect-ratio: 3/4;
+      background: var(--dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lb-placeholder-text {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: rgba(242,240,236,0.2);
+      letter-spacing: 2px;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .lb-close {
+      position: fixed;
+      top: 18px; right: 20px;
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      color: var(--white);
+      opacity: 0.5;
+      cursor: pointer;
+      letter-spacing: 1px;
+      z-index: 1000;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+
+    .lb-close:hover { opacity: 1; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes up {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.15; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕ CLOSE</button>
+  <div id="lb-content"></div>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <span class="brand">
+        <img src="assets/font-white.png" style="width: 150px" />
+      </span>
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        V3 Boxy Polo Live
       </div>
     </div>
-  </body>
+    <div class="header-sub">Jakarta Streetwear · Est. 2023</div>
+    <div class="social-proof">Featured by 5 content creators</div>
+  </div>
+
+  <!-- CTA TOP -->
+  <div class="cta-top">
+    <div class="cta-headline-top">Gajian? Gas.</div>
+    <div class="cta-sub-top">Free ongkir (Website) + hemat Rp 50.000 — khusus periode gajian.</div>
+    <div class="cta-grid">
+      <a href="https://unculture.id" class="cta-cell primary" target="_blank" rel="noopener">
+        <div class="cta-cell-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+        <span class="cta-cell-label">Website</span>
+      </a>
+      <a href="https://s.shopee.co.id/50UbuSHIJE" class="cta-cell" target="_blank" rel="noopener">
+        <div class="cta-cell-icon"><svg viewBox="0 0 24 24"><path d="M19 7h-1.5C17.5 4.24 15.26 2 12 2S6.5 4.24 6.5 7H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-7-3c2.21 0 3.5 1.34 3.5 3h-7c0-1.66 1.29-3 3.5-3zm7 16H5V9h14v11zm-7-6c-1.1 0-2-.9-2-2h-2c0 2.21 1.79 4 4 4s4-1.79 4-4h-2c0 1.1-.9 2-2 2z"/></svg></div>
+        <span class="cta-cell-label">Shopee</span>
+      </a>
+      <a href="https://vt.tiktok.com/ZS9R3jSeWnnda-J2qaS/" class="cta-cell" target="_blank" rel="noopener">
+        <div class="cta-cell-icon"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></div>
+        <span class="cta-cell-label">TikTok</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- V3 PRODUCT GRID -->
+  <div class="section">
+    <div class="section-label">V3 — Boxy Oversized Polo</div>
+    <div class="product-grid">
+      <div class="product-photo" data-label="FOTO&#10;01" onclick="openLb(this)">
+        <img src="assets/foto-model.jpg" />
+      </div>
+      <div class="product-photo" data-label="FOTO&#10;02" onclick="openLb(this)">
+        <img src="assets/v3-detail2.jpg" />
+      </div>
+      <div class="product-photo" data-label="FOTO&#10;03" onclick="openLb(this)">
+        <img src="assets/v3-detail1.jpg" />
+      </div>
+    </div>
+    <div class="col-btns">
+      <a href="https://www.unculture.id/products/UNCULTURE-VOL--III---Black-Boxy-Polo-Shirt---Kaos-Berkerah-Oversized-Pria-955720" class="col-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        Website
+      </a>
+      <a href="https://s.shopee.co.id/30kCJVD7Rz" class="col-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M19 7h-1.5C17.5 4.24 15.26 2 12 2S6.5 4.24 6.5 7H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-7-3c2.21 0 3.5 1.34 3.5 3h-7c0-1.66 1.29-3 3.5-3zm7 16H5V9h14v11zm-7-6c-1.1 0-2-.9-2-2h-2c0 2.21 1.79 4 4 4s4-1.79 4-4h-2c0 1.1-.9 2-2 2z"/></svg>
+        Shopee
+      </a>
+      <a href="https://vt.tokopedia.com/t/ZS9LT4AvSnp1x-HI3YP/" class="col-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        TikTok
+      </a>
+    </div>
+    <div class="product-caption">
+      <span class="product-name">Black Boxy Oversized Polo</span>
+      <div class="product-price">
+        <span class="price-original">Rp 425.000</span>
+        <span class="price-promo">Rp 329.000</span>
+        <span class="price-tag">Gajian Sale</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- BENEFIT GRID 2x2 -->
+  <div class="benefits">
+    <div class="section-label">Kenapa V3</div>
+    <div class="benefit-grid">
+
+      <div class="benefit-card" onclick="openLb(this.querySelector('.benefit-img'))">
+        <div class="benefit-img" data-label="FOTO&#10;DETAIL&#10;ZIPPER">
+          <img src="assets/v3-detail2.jpg" />
+        </div>
+        <div class="benefit-body">
+          <span class="benefit-title">Zipper Collar</span>
+          <span class="benefit-desc">Detail fungsional yang bikin beda dari polo biasa.</span>
+        </div>
+      </div>
+
+      <div class="benefit-card" onclick="openLb(this.querySelector('.benefit-img'))">
+        <div class="benefit-img " data-label="FOTO&#10;FIT&#10;OVERSIZED">
+          <img src="assets/v3-model.jpeg"/>
+        </div>
+        <div class="benefit-body">
+          <span class="benefit-title">Oversized Fit</span>
+          <span class="benefit-desc">Boxy, nggak kebesaran. Pas di berbagai postur.</span>
+        </div>
+      </div>
+
+      <div class="benefit-card" onclick="openLb(this.querySelector('.benefit-img'))">
+        <div class="benefit-img" data-label="FOTO&#10;TEKSTUR&#10;BAHAN">
+          <img src="assets/v3-detail3.jpg" />
+        </div>
+        <div class="benefit-body">
+          <span class="benefit-title">Bahan Tebal</span>
+          <span class="benefit-desc">Cotton heavyweight. Nggak melar, tahan lama.</span>
+        </div>
+      </div>
+
+      <div class="benefit-card" onclick="openLb(this.querySelector('.benefit-img'))">
+        <div class="benefit-img" data-label="FOTO&#10;FULL&#10;OUTFIT">
+          <img src="assets/v3-mixmatch.png" />
+        </div>
+        <div class="benefit-body">
+          <span class="benefit-title">All-Black</span>
+          <span class="benefit-desc">Mix & match gampang dengan apa aja.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- V2 GRID -->
+  <div class="section">
+    <div class="section-label">Koleksi — V2</div>
+    <div class="product-grid">
+      <div class="product-photo" data-label="FOTO&#10;V2&#10;01" loading="lazy" onclick="openLb(this)">
+        <img src="assets/v2-black.jpg" />
+      </div>
+      <div class="product-photo" data-label="FOTO&#10;V2&#10;02" loading="lazy" onclick="openLb(this)">
+        <img src="assets/v2-creme.jpg" />
+      </div>
+      <div class="product-photo" data-label="FOTO&#10;V2&#10;03" loading="lazy" onclick="openLb(this)">
+        <img src="assets/v2-detail.jpg" />
+      </div>
+    </div>
+    <div class="col-btns">
+      <a href="https://www.unculture.id/products/Unculture-Basic-Logo-Oversized-Creme-T-Shirt---VOL--II-957545" class="col-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        Website
+      </a>
+      <a href="https://s.shopee.co.id/4qBqVdRRI6" class="col-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M19 7h-1.5C17.5 4.24 15.26 2 12 2S6.5 4.24 6.5 7H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-7-3c2.21 0 3.5 1.34 3.5 3h-7c0-1.66 1.29-3 3.5-3zm7 16H5V9h14v11zm-7-6c-1.1 0-2-.9-2-2h-2c0 2.21 1.79 4 4 4s4-1.79 4-4h-2c0 1.1-.9 2-2 2z"/></svg>
+        Shopee
+      </a>
+      <a href="https://vt.tokopedia.com/t/ZS9LTqF6SdvpH-ZPFxx/" class="col-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        TikTok
+      </a>
+    </div>
+    <div class="product-caption">
+      <span class="product-name">V2 — Basic Logo Oversized Tshirt</span>
+      <div class="product-price"><span class="price-promo">Rp 179.000</span></div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- V1 GRID -->
+  <div class="section">
+    <div class="section-label">Koleksi — V1</div>
+    <div class="product-grid">
+      <div class="product-photo" data-label="FOTO&#10;V1&#10;01" loading="lazy" onclick="openLb(this)">
+        <img src="assets/v1-cowo.jpg" />
+      </div>
+      <div class="product-photo" data-label="FOTO&#10;V1&#10;02" loading="lazy" onclick="openLb(this)">
+        <img src="assets/v1-cewe.jpg" />
+      </div>
+      <div class="product-photo" data-label="FOTO&#10;V1&#10;03" loading="lazy" onclick="openLb(this)">
+        <img src="assets/v1-detail.jpg" />
+      </div>
+    </div>
+    <div class="col-btns">
+      <a href="https://www.unculture.id/products/Unculture-Black-on-Black-Oversized-T-Shirt-0----VOL--I-957546" class="col-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        Website
+      </a>
+      <a href="https://s.shopee.co.id/6fdUhIa55Z" class="col-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M19 7h-1.5C17.5 4.24 15.26 2 12 2S6.5 4.24 6.5 7H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-7-3c2.21 0 3.5 1.34 3.5 3h-7c0-1.66 1.29-3 3.5-3zm7 16H5V9h14v11zm-7-6c-1.1 0-2-.9-2-2h-2c0 2.21 1.79 4 4 4s4-1.79 4-4h-2c0 1.1-.9 2-2 2z"/></svg>
+        Shopee
+      </a>
+      <a href="https://vt.tokopedia.com/t/ZS9LTq3kJr6nx-ctAo0/" class="col-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        TikTok
+      </a>
+    </div>
+    <div class="product-caption">
+      <span class="product-name">V1 — Black on Black Oversized Tshirt</span>
+      <div class="product-price"><span class="price-promo">Rp 245.000</span></div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testimonials">
+    <div class="section-label">Yang bilang</div>
+
+    <div class="testi-item">
+      <div class="testi-top">
+        <span class="testi-name">Rizky A.</span>
+        <span class="testi-stars">★★★★★</span>
+      </div>
+      <p class="testi-text">"Bahan tebal, fit oversized-nya pas banget. Udah order 2x."</p>
+    </div>
+
+    <div class="testi-item">
+      <div class="testi-top">
+        <span class="testi-name">Dimas F.</span>
+        <span class="testi-stars">★★★★★</span>
+      </div>
+      <p class="testi-text">"Keliatan mahal padahal harganya worth it. Daily go-to sekarang."</p>
+    </div>
+
+    <div class="testi-item">
+      <div class="testi-top">
+        <span class="testi-name">Fajar R.</span>
+        <span class="testi-stars">★★★★★</span>
+      </div>
+      <p class="testi-text">"Zipper collar-nya detail banget, nggak pasaran. Suka banget sama vibe-nya."</p>
+    </div>
+
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- CTA BOTTOM -->
+  <div class="cta-bottom">
+    <div class="cta-headline">Dapatkan<br>Sekarang</div>
+    <div class="cta-sub">Pilih platform yang paling nyaman buat lo</div>
+    <div class="links">
+      <a href="https://unculture.id" class="link-btn primary" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <div class="btn-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+          <div><span class="btn-label">Website</span><span class="btn-desc">unculture.id — checkout langsung</span></div>
+        </div>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="https://shopee.co.id/unculture" class="link-btn" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <div class="btn-icon"><svg viewBox="0 0 24 24"><path d="M19 7h-1.5C17.5 4.24 15.26 2 12 2S6.5 4.24 6.5 7H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-7-3c2.21 0 3.5 1.34 3.5 3h-7c0-1.66 1.29-3 3.5-3zm7 16H5V9h14v11zm-7-6c-1.1 0-2-.9-2-2h-2c0 2.21 1.79 4 4 4s4-1.79 4-4h-2c0 1.1-.9 2-2 2z"/></svg></div>
+          <div><span class="btn-label">Shopee</span><span class="btn-desc">Belanja via marketplace</span></div>
+        </div>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="https://www.tiktok.com/@unculture.id" class="link-btn" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <div class="btn-icon"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></div>
+          <div><span class="btn-label">TikTok Shop</span><span class="btn-desc">Beli langsung dari video</span></div>
+        </div>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="https://instagram.com/unculture.id" class="link-btn" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <div class="btn-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+          <div><span class="btn-label">Instagram</span><span class="btn-desc">@unculture.id</span></div>
+        </div>
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="footer-text">© 2025 Unculture — Jakarta</p>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var buttons = [
+      { selector: 'a[href*="unculture.id"]', label: 'website' },
+      { selector: 'a[href*="shopee"]', label: 'shopee' },
+      { selector: 'a[href*="tiktok"]', label: 'tiktok' },
+      { selector: 'a[href*="instagram"]', label: 'instagram' }
+    ];
+
+    buttons.forEach(function(btn) {
+      document.querySelectorAll(btn.selector).forEach(function(el) {
+        el.addEventListener('click', function() {
+          gtag('event', 'click_channel', {
+            channel: btn.label,
+            page: 'bio'
+          });
+        });
+      });
+    });
+  });
+
+  function openLb(el) {
+    const lb = document.getElementById('lb');
+    const content = document.getElementById('lb-content');
+    const img = el.querySelector('img');
+    if (img) {
+      content.innerHTML = '<img class="lb-img" src="' + img.src + '" alt="">';
+    } else {
+      const label = el.getAttribute('data-label') || 'FOTO';
+      content.innerHTML = '<div class="lb-placeholder"><span class="lb-placeholder-text">' + label.replace(/\n/g,'<br>') + '</span></div>';
+    }
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLb() {
+    document.getElementById('lb').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLb();
+  });
+</script>
+</body>
 </html>
